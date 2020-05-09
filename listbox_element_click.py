@@ -13,16 +13,16 @@ def my_updel():
     l1.delete(ANCHOR)  # Delete selected element
     #l1.delete(2)  # Delete the 2nd position element     
 
-my_font=('times', 8, 'italic')   
+my_font=('tmes', 8, 'italic')   
 l1 = tk.Listbox(my_w, height=8, width=100, bg='yellow', bd=5, cursor='boat',
                 font=my_font, fg='green',
-                highlightcolor='blue', highlightthickness=15,
+                highlightcolor='blue', highlightthickness=5,
                 selectbackground='orange', selectforeground='cyan',
                 selectmode='multiple'
                 #selectmode: It can be SINGLE, BROWSE, MULTIPLE, EXTENDED
                 )
-l1.pack(side=TOP, anchor=CENTER, ipady=0, ipadx=40) 
-sb = Scrollbar(l1)
+l1.pack(side=TOP, anchor=CENTER, ipady=20, ipadx=40) 
+sb = Scrollbar(l1, elementborderwidth=1)
 sb.pack(side=RIGHT, fill=Y)
 l1.config(yscrollcommand=sb.set)
 sb.config(command=l1.yview)
@@ -38,5 +38,5 @@ b1 = tk.Button(my_w, text="Delete", command=lambda: my_updel())
 b1.pack(side=TOP)
 
 l1.bind('<<ListboxSelect>>', my_upd)
-    
+print(   my_w .pack_slaves ())
 my_w.mainloop()  # Keep the window open
